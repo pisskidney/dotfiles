@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/home/petisnnake/Projects/PBS'
+let g:netrw_dirhist_2='/home/petisnnake/Projects'
+let g:netrw_dirhist_3='/home/petisnnake'
+let g:netrw_dirhist_4='/home/petisnnake/etc'
+let g:netrw_dirhist_5='/home/petisnnake/etc/merlin_project'
+let g:netrw_dirhist_6='/home/petisnnake/Projects/PBS/cove-api-service/apps/rest_service/rest_service'
+let g:netrw_dirhist_7='/home/petisnnake/Projects/PBS/vts/apps/vts/vts'
+let g:netrw_dirhist_8='/home/petisnnake/Projects/PBS/merlin/apps/videoingester/videoingester/management/commands'
+let g:netrw_dirhist_9='/home/petisnnake'
