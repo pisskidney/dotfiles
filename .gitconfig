@@ -1,0 +1,41 @@
+[user]
+    name = Peter Horvath
+    email = peter.horvath@3pillarglobal.com
+
+[core]
+    editor = vim
+
+[color]
+    status = auto
+    branch = auto
+    diff = auto
+    ui = auto
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[color "diff"]
+    meta = cyan
+    frag = magenta
+    old = red
+    new = green
+    whitespace = red reverse
+
+[color "branch"]
+    current = cyan reverse
+    local = cyan
+    remote = green
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    br = branch
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    unci = reset HEAD^
+    uncommit = reset HEAD^
+    ls = ls-files
+    out = log HEAD..origin
+    killbranches = !git branch | grep -v master | xargs git branch -d 2> /dev/null
