@@ -1,24 +1,24 @@
-[submodule "_vim/bundle/fugitive"]
+[submodule ".vim/bundle/fugitive"]
         path = .vim/bundle/fugitive
         url = git://github.com/tpope/vim-fugitive.git
-[submodule "_vim/bundle/surround"]
+[submodule ".vim/bundle/surround"]
         path = .vim/bundle/surround
         url = git://github.com/tpope/vim-surround.git
-[submodule "_vim/bundle/pep8"]
+[submodule ".vim/bundle/pep8"]
         path = .vim/bundle/pep8
         url = git://github.com/vim-scripts/pep8.git
-[submodule "_vim/bundle/nerd-tree"]
+[submodule ".vim/bundle/nerd-tree"]
         path = .vim/bundle/nerd-tree
         url = git://github.com/vim-scripts/The-NERD-tree.git
-[submodule "_vim/bundle/autocomplpop"]
+[submodule ".vim/bundle/autocomplpop"]
         path = .vim/bundle/autocomplpop
         url = git://github.com/vim-scripts/AutoComplPop.git
-[submodule "_vim/bundle/pyflakes"]
+[submodule ".vim/bundle/pyflakes"]
         path = .vim/bundle/pyflakes
         url = git://github.com/mitechie/pyflakes-pathogen.git
-[submodule "_vim/bundle/nerdcommenter"]
+[submodule ".vim/bundle/nerdcommenter"]
         path = .vim/bundle/nerdcommenter
         url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "_vim/bundle/delimit-mate"]
+[submodule ".vim/bundle/delimit-mate"]
         path = .vim/bundle/delimit-mate
         url = https://github.com/Raimondi/delimitMate.git
