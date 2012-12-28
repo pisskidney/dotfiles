@@ -1,4 +1,4 @@
-Horvath Peter's dotfiles.
+Peter Horvath's dotfiles.
 =========================
 Welcome to my dotfiles, where originality doesn't matter and most things are stolen.
 
