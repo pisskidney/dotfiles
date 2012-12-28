@@ -1,7 +1,7 @@
 " Author - Peter Horvath
 " https://github.com/pisskidney/dotfiles
-" Dependencies - pep8, pyflakes, tagbar, nerd-tree
-set tags=~/tags
+" Dependencies - pep8, pyflakes, tagbar, nerd-tree, ctags
+set tags=~/tags               " Ctags path
 
 set nocompatible              " Don't be compatible with vi
 let mapleader=","             " Change the leader to be a comma vs slash
@@ -17,12 +17,12 @@ map <c-h> <c-w>h
 
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1 " Show hidden files
-let g:NERDTreeWinSize=20 " NerdTree width
+let NERDTreeShowHidden=1      " Show hidden files
+let g:NERDTreeWinSize=20      " NerdTree width
 
 " Open Tagbar
 map <leader>t :TagbarToggle<CR>
-let g:tagbar_width=20 " Tagbar width
+let g:tagbar_width=20         " Tagbar width
 
 " Toggle paste mode
 map <leader>p :set paste!<CR>
