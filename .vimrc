@@ -17,12 +17,12 @@ map <c-h> <c-w>h
 
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
-
-" Make NerdTree show hidden files
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1 " Show hidden files
+let g:NERDTreeWinSize=20 " NerdTree width
 
 " Open Tagbar
 map <leader>t :TagbarToggle<CR>
+let g:tagbar_width=20 " Tagbar width
 
 " Toggle paste mode
 map <leader>p :set paste!<CR>
