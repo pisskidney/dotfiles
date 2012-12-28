@@ -1,6 +1,6 @@
 " Author - Peter Horvath
 " https://github.com/pisskidney/dotfiles
-" Dependencies - pep8, pyflakes
+" Dependencies - pep8, pyflakes, tagbar, nerd-tree
 set tags=~/tags
 
 set nocompatible              " Don't be compatible with vi
@@ -18,8 +18,11 @@ map <c-h> <c-w>h
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
 
-" Open Tag List
-map <leader>t :TlistToggle<CR>
+" Make NerdTree show hidden files
+let NERDTreeShowHidden=1
+
+" Open Tagbar
+map <leader>t :TagbarToggle<CR>
 
 " Toggle paste mode
 map <leader>p :set paste!<CR>
