@@ -1,6 +1,7 @@
 " Author - Peter Horvath
 " https://github.com/pisskidney/dotfiles
 " Dependencies - pep8, pyflakes, tagbar, nerd-tree, ctags
+
 set tags=~/tags               " Ctags path
 
 set nocompatible              " Don't be compatible with vi
