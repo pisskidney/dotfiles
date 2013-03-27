@@ -2,6 +2,8 @@
 " https://github.com/pisskidney/dotfiles
 " Dependencies - pep8, pyflakes, tagbar, nerd-tree, ctags
 
+set noswapfile
+
 set tags=~/tags               " Ctags path
 
 set nocompatible              " Don't be compatible with vi
