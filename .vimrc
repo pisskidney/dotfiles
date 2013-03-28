@@ -1,6 +1,6 @@
 " Author - Peter Horvath
 " https://github.com/pisskidney/dotfiles
-" Dependencies - pep8, pyflakes, tagbar, nerd-tree, ctags
+" Dependencies - pep8, pyflakes, ctags
 
 set noswapfile
 
