@@ -10,4 +10,4 @@ To install the vim plugins via vundle:
 - 2. Start `vim` and run the command `:BundleInstall` to install the plugins that are set in .vimrc
    
 
-The rest of the config files just need to be pointed to from the home dir.
+The rest of the config files (.zshrc .tmux.conf etc) just need to be pointed to from the home dir.
