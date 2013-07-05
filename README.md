@@ -12,7 +12,7 @@ Launch `vim` and run `:BundleInstall` or run `vim +BundleInstall +qall` in the c
 
 What this does:
 ===============
-    -clones the dotfiles repo to ~/.dotfiles
-    -creates proper symlinks to all config files
-    -sets up vundle
-    -installs dependencies
+    - clones the dotfiles repo to ~/.dotfiles
+    - creates proper symlinks to all config files
+    - sets up vundle
+    - installs dependencies
