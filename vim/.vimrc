@@ -2,6 +2,23 @@
 " https://github.com/pisskidney/dotfiles
 " Dependencies - pep8, pyflakes, ctags
 
+
+set nocompatible
+filetype off
+
+" vundle stuff
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/pep8'
+Bundle 'vim-scripts/The-NERD-tree'
+Bundle 'majutsushi/tagbar'
+Bundle 'msanders/snipmate'
+Bundle 'tpope/vim-pastie'
+Bundle 'kevinw/pyflakes'
+
 set noswapfile
 
 set tags=~/tags               " Ctags path
@@ -44,12 +61,6 @@ command! WQ :wq
 
 " Remove trailing whitespace on <leader>S
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
-
-" Load pathogen with docs for all plugins
-filetype off
-"call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
-call pathogen#helptags()
 
 " Basic settings
 syntax on                     " Syntax highlighing
