@@ -1,16 +1,14 @@
-Peter Horvath's dotfiles.
-=========================
+# Peter Horvath's dotfiles.
 Welcome to my dotfiles, where originality doesn't matter and most things are stolen.
 
-Set-up
-============
+## Set-up
 Run `wget -qO- https://github.com/pisskidney/dotfiles/raw/master/bootstrap.sh | /bin/bash`
 
-Plugin Installation
-===================
+## Plugin Installation
 Launch `vim` and run `:BundleInstall` or run `vim +BundleInstall +qall` in the cli.
 
-* **What this does:**
+## Result
+* **What this all does:**
     - clones the dotfiles repo to ~/.dotfiles
     - creates proper symlinks to all config files
     - sets up vundle
