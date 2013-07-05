@@ -4,15 +4,8 @@ Welcome to my dotfiles, where originality doesn't matter and most things are sto
 
 Vim
 ===
-Install plugins by getting the .gitmodules file and running:
+Install the vim plugins via vundle:
+1.  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+2.  Launch vim, run :BundleInstall
 
-    git submodule sync
-    git submodule init
-    git submodule update
-    git submodule foreach git pull origin master
-    git submodule foreach git submodule init
-    git submodule foreach git submodule update
-
-.gitignore
-==========
-A general purpose file to block most trash filetypes / folders.
+The rest of the config files just need to be pointed to from the home dir.
