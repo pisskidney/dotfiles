@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/petisnnake/Projects/PBS/vts/apps/vts/vts/models'
-let g:netrw_dirhist_2='/home/petisnnake/Projects/PBS/vts/apps/vts/vts'
-let g:netrw_dirhist_3='/home/petisnnake/Projects/PBS/merlin/apps/videoingester/videoingester/admin'
-let g:netrw_dirhist_4='/home/petisnnake/Projects/project_euler/.git'
-let g:netrw_dirhist_5='/home/petisnnake/Projects/PBS/cove-api-service/apps/rest_service/rest_service/handlers'
-let g:netrw_dirhist_6='/home/petisnnake/Projects/PBS/cove-api-service/cove_api_project/conf-defaults'
