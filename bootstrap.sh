@@ -9,3 +9,6 @@ else
         ln -s "$cf" ~/.$(basename "$cf")
     done
 fi
+
+`git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
+`vim +BundleInstall +qall`
