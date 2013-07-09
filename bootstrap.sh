@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ -d ~/.dotfiles ]; then
     cd ~/.dotfiles
@@ -11,6 +11,6 @@ else
 fi
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim -u ~/.dotfiles/.vimrc - +BundleInstall! +BundleClean! +qall
+vim +BundleInstall! +BundleClean! +qall
 sudo pip install pep8
 sudo pip install pyflakes
