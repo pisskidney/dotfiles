@@ -11,5 +11,6 @@ else
 fi
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+vim -E +BundleInstall +qall
 sudo pip install pep8
 sudo pip install pyflakes
