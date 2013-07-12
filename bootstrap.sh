@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ -d ~/.dotfiles ]; then
     cd ~/.dotfiles
@@ -14,3 +14,4 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 sudo pip install pep8
 sudo pip install pyflakes
 sudo apt-get install exuberant-ctags
+vim - +BundleInstall! +BundleClean! +qall
