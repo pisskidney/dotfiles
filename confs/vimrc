@@ -19,6 +19,9 @@ Bundle 'msanders/snipmate'
 Bundle 'tpope/vim-pastie'
 Bundle 'kevinw/pyflakes'
 Bundle 'davidhalter/jedi-vim'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
 
 set noswapfile
 
@@ -35,6 +38,9 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+
+" Jedi
+let g:jedi#related_names_command = "<leader>m"
 
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
