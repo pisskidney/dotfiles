@@ -28,7 +28,7 @@ set noswapfile
 set tags=~/tags               " Ctags path
 
 set nocompatible              " Don't be compatible with vi
-let mapleader=","             " Change the leader to be a comma vs slash
+let mapleader="n"             " Change the leader to be a comma vs slash
 
 " Reload .vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
