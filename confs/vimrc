@@ -54,6 +54,9 @@ let g:tagbar_width=20         " Tagbar width
 " Toggle paste mode
 map <leader>p :set paste!<CR>
 
+" Toggle numbers
+map <leader>3 :set number!<CR>
+
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
 
