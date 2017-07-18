@@ -40,7 +40,7 @@ map <c-l> <c-w>l
 map <c-h> <c-w>h
 
 " Jedi
-let g:jedi#related_names_command = "<leader>m"
+let g:jedi#usages_command = "<leader>m"
 
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
