@@ -4,6 +4,9 @@ Welcome to my dotfiles, where originality doesn't matter and most things are sto
 ## Set-up
 Run `wget -qO- https://github.com/pisskidney/dotfiles/raw/master/bootstrap.sh | /bin/bash`
 
+Install zsh (sudo apt-get install zsh)
+Install oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
+
 * **What this all does:**
     - clones the dotfiles repo to ~/.dotfiles
     - creates proper symlinks to all config files
