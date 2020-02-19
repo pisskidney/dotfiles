@@ -12,16 +12,15 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/pep8'
 Bundle 'vim-scripts/The-NERD-tree'
 Bundle 'majutsushi/tagbar'
 Bundle 'msanders/snipmate'
+Plugin 'nvie/vim-flake8'
 Bundle 'tpope/vim-pastie'
 Bundle 'kevinw/pyflakes'
 Bundle 'davidhalter/jedi-vim'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
 
 set noswapfile
 
@@ -161,9 +160,6 @@ vnoremap <tab> %
 " Python
 au FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-
-" Run pep8
-let g:pep8_map='<leader>8'
 
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
