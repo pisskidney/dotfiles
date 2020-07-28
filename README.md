@@ -2,7 +2,7 @@
 Welcome to my dotfiles, where originality doesn't matter and most things are stolen.
 
 ## Set-up
-Run `wget -qO- https://github.com/pisskidney/dotfiles/raw/master/bootstrap.sh | /bin/bash`
+Run `curl -s -L https://github.com/pisskidney/dotfiles/raw/master/bootstrap.sh | /bin/bash`
 
 Install zsh (sudo apt-get install zsh)
 Install oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
