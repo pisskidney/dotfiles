@@ -1,97 +1,72 @@
 " Author - Peter Horvath
 " https://github.com/pisskidney/dotfiles
-" Dependencies - pep8, pyflakes, ctags
 
+"======================================================================
+"========================= vim-plug auto-load =========================
+"======================================================================
 
-set nocompatible
-filetype off
+" Install vim-plug if needed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
-" vundle stuff
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-scripts/The-NERD-tree'
-Bundle 'majutsushi/tagbar'
-Bundle 'msanders/snipmate'
-Plugin 'nvie/vim-flake8'
-Bundle 'tpope/vim-pastie'
-Bundle 'kevinw/pyflakes'
-Bundle 'davidhalter/jedi-vim'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
+" Install missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
-set noswapfile
+call plug#begin('~/.vim/plugged')
+" Git integration
+Plug 'tpope/vim-fugitive'
+" File navigator
+Plug 'preservim/nerdtree'
+" Conquer of Completion. Use release branch (recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Cool fuzzy file explorer
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Highlight whitespace
+Plug 'ntpeters/vim-better-whitespace'
+" Surround words or content in quotes, html tags etc
+Plug 'tpope/vim-surround'
+" Comment out code dynamically
+Plug 'tpope/vim-commentary'
+" Set tab options on run-time
+Plug 'tpope/vim-sleuth'
+" Cool tabbar (line on bottom)
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Syntax highlighting, error checking, PEP8 checks etc
+Plug 'nvie/vim-flake8'
+call plug#end()
 
-set tags=~/tags               " Ctags path
+"======================================================================
+"========================= GENERAL SETTINGS ===========================
+"======================================================================
 
-set nocompatible              " Don't be compatible with vi
-let mapleader="n"             " Change the leader to be a comma vs slash
+colorscheme molokai
 
-" Reload .vimrc
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+set encoding=utf-8
+set nowrap
+set cmdheight=2             " Give more space for displaying messages.
+set hidden                  " TextEdit might fail if hidden is not set.
+set updatetime=300          " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+		            " delays and poor user experience.
+set shortmess+=c            " Don't pass messages to |ins-completion-menu|.
+set t_Co=256                " Enable 256 colors
+set termguicolors           " Enable GUI colors for the terminal to get truecolor
+set noswapfile              " Disable swap files
+set nobackup
+set nowb
+set autoread                " Reload file changes outside of vim
 
-" Ctrl-jklm  changes to that split
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
-map <c-h> <c-w>h
-
-" Jedi
-let g:jedi#usages_command = "<leader>m"
-
-" Open NerdTree
-map <leader>n :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1      " Show hidden files
-let g:NERDTreeWinSize=20      " NerdTree width
-
-" Open Tagbar
-map <leader>t :TagbarToggle<CR>
-let g:tagbar_width=20         " Tagbar width
-
-" Toggle paste mode
-map <leader>p :set paste!<CR>
-
-" Toggle numbers
-map <leader>3 :set number!<CR>
-
-" Quit window on <leader>q
-nnoremap <leader>q :q<CR>
-
-" Save on <leader>w or :W
-nnoremap <leader>w :w<CR>
-command! W :w
-
-" Correct my typos
-command! Q :q
-command! Wq :wq
-command! WQ :wq
-
-" Remove trailing whitespace on <leader>S
-nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
-
-" Basic settings
-syntax on                     " Syntax highlighing
-filetype on                   " Try to detect filetypes
-filetype plugin indent on     " Enable loading indent file for filetype
-set t_Co=256                  " Support for 256 color terminal
-set number                    " Display line numbers
-set numberwidth=1             " Using only 1 column (and 1 space) if possible
-set background=dark           " We are using dark background
-set title                     " Show title in console title bar
-set wildmenu                  " Menu completion in command mode on <Tab>
-set wildmode=full             " <Tab> cycles between all matching choices.
-
-" Ignore these files when completing
-set wildignore+=*.o,*.obj,.git,*.pyc,*swp,eggs/**,*.egg-info/**,*.un~
-
-" Insert completion - don't select first item, follow typing in autocomplete
-set completeopt=menuone,longest,preview
-set pumheight=6             " Keep a small completion window
+set number                  " Display line numbers
+set numberwidth=1           " Using only 1 column (and 1 space) if possible
+set background=dark         " We are using dark background
+set title                   " Show title in console title bar
 
 " Moving Around/Editing
-set encoding=utf-8          " Set encoding to UTF-8
 set cursorline              " Have a line indicate the cursor location
 set ruler                   " Show the cursor position all the time
 set nostartofline           " Avoid moving cursor to BOL when jumping around
@@ -102,7 +77,7 @@ set nowrap                  " Don't wrap text
 set linebreak               " Don't wrap textin the middle of a word
 set autoindent              " Always set autoindenting on
 set smartindent             " Use smart indent if there is no indent file
-set tabstop=8               " <Tab> inserts 4 spaces
+set tabstop=4               " <Tab> inserts 4 spaces
 set shiftwidth=4            " Indent level is 4 spaces wide
 set softtabstop=4           " <BS> over an autoindent deletes both spaces
 set smarttab                " Handle tabs more intelligently
@@ -111,10 +86,7 @@ set shiftround              " Rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " Show matching <> (html mainly) as well
 set foldmethod=indent       " Allow us to fold on indents
 set foldlevel=99            " Don't fold by default
-set colorcolumn=79          " Color column to mark the end 80 char limit
-
-" Creates undo files (*.un~) for undoes after close/open file (vim 7.3)
-"set undofile
+set colorcolumn=99          " Color column to mark the end 80 char limit
 
 " Reading/Writing
 set noautowrite             " Never write a file unless I request it
@@ -123,23 +95,6 @@ set noautoread              " Don't automatically re-read changed files
 set nomodeline              " Disallow vim options to be embedded in files
 set modelines=0             " Same as above
 set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings
-
-" Messages, Info, Status
-set ls=2                    " Allways show status line
-set noerrorbells
-set novisualbell
-set vb t_vb=                " Disable all bells, blinks and whatnot
-set confirm                 " Y-N-C prompt if closing with unsaved changes
-set showcmd                 " Show incomplete normal mode commands as I type
-set report=0                " : commands always print changed line count
-set shortmess+=a            " Use [+]/[RO]/[w] for modified/readonly/written
-set ruler                   " Show some info, even without statuslines
-set laststatus=2            " Always show statusline, even if only 1 window
-set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
-
-" Displays tabs with :set list & displays when a line runs off-screen
-"set listchars=tab:>-,eol:‖,trail:»,precedes:<,extends:>
-"set list
 
 " Searching and Patterns
 nnoremap / /\v
@@ -156,26 +111,101 @@ nnoremap <leader><space> :noh<CR>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Change the leader to be n
+let mapleader="n"
 
-" Python
-au FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+" Quit window on <leader>q
+nnoremap <leader>q :q<CR>
 
-" Don't let pyflakes use the quickfix window
-let g:pyflakes_use_quickfix = 0
+" Save on <leader>w or :W
+nnoremap <leader>w :w<CR>
+command! W :w
 
-" Select the item in the list with enter
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Close preview window automatically when we move around
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" Ctrl-jklm  changes to that split
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
 
-" Display
-if has("gui_running")
-    " Remove menu bar
-    set guioptions-=m
-    " Remove toolbar
-    set guioptions-=T
-endif
+" Reload .vimrc
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-colorscheme molokai
+" Remove trailing whitespace on <leader>S
+nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+
+" <leader>p inserts pdb line after the current line
+nnoremap <leader>p oimport pdb; pdb.set_trace()<Esc>
+
+" Toggle paste mode
+map <leader>P :set paste!<CR>
+
+" Toggle numbers
+map <leader>3 :set number!<CR>
+
+"======================================================================
+"======================== NERDTREE SETTINGS ===========================
+"======================================================================
+
+map <leader>n :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1      " Show hidden files
+let g:NERDTreeWinSize=20      " NerdTree width
+
+"======================================================================
+"========================== COC SETTINGS ==============================
+"======================================================================
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>F  <Plug>(coc-format-selected)
+nmap <leader>F  <Plug>(coc-format-selected)
+nnoremap <F4> :StripWhitespace<CR>
+
+let s:LSP_CONFIG = {
+			\  'flow': {
+			\    'command': exepath('flow'),
+			\    'args': ['lsp'],
+			\    'filetypes': ['javascript', 'javascriptreact'],
+			\    'initializationOptions': {},
+			\    'requireRootPattern': 1,
+			\    'settings': {},
+			\    'rootPatterns': ['.flowconfig']
+			\  }
+			\}
+let s:languageservers = {}
+for [lsp, config] in items(s:LSP_CONFIG)
+	  let s:not_empty_cmd = !empty(get(config, 'command'))
+	    if s:not_empty_cmd | let s:languageservers[lsp] = config | endif
+    endfor
+
+    if !empty(s:languageservers)
+	      call coc#config('languageserver', s:languageservers)
+	        endif
+
+"======================================================================
+"========================== FZF SETTINGS ==============================
+"======================================================================
+
+" Open fzf
+map <leader>f :Files<CR>
+
+"======================================================================
+"======================= AIRLINE SETTINGS =============================
+"======================================================================
+
+let g:airline_theme='solarized'
+
+"======================================================================
+"====================== vim-flake8 SETTINGS ===========================
+"======================================================================
+
+" Run pyflakes whenever writing to a Python file
+let g:flake8_cmd = '/Users/d695822/Library/Python/3.8/bin/flake8 --max-line-length 100'
+let g:flake8_show_quickfix=1
+let g:flake8_show_in_gutter=1
+let g:flake8_show_in_file=1           " Show errors directly in file
+let g:flake8_quickfix_height=5        " Height of quickfix window
+autocmd BufWritePost *.py call flake8#Flake8()
