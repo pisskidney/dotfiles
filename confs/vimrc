@@ -34,6 +34,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 " Set tab options on run-time
 Plug 'tpope/vim-sleuth'
+" Colorscheme
+Plug 'morhetz/gruvbox'
 " Cool tabbar (line on bottom)
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -44,8 +46,6 @@ call plug#end()
 "======================================================================
 "========================= GENERAL SETTINGS ===========================
 "======================================================================
-
-colorscheme molokai
 
 set encoding=utf-8
 set nowrap
@@ -67,7 +67,6 @@ set background=dark         " We are using dark background
 set title                   " Show title in console title bar
 
 " Moving Around/Editing
-set cursorline              " Have a line indicate the cursor location
 set ruler                   " Show the cursor position all the time
 set nostartofline           " Avoid moving cursor to BOL when jumping around
 set virtualedit=block       " Let cursor move past the last char in <C-v> mode
@@ -196,7 +195,7 @@ map <leader>f :Files<CR>
 "======================= AIRLINE SETTINGS =============================
 "======================================================================
 
-let g:airline_theme='solarized'
+let g:airline_theme='violet'
 
 "======================================================================
 "====================== vim-flake8 SETTINGS ===========================
@@ -209,3 +208,17 @@ let g:flake8_show_in_gutter=1
 let g:flake8_show_in_file=1           " Show errors directly in file
 let g:flake8_quickfix_height=5        " Height of quickfix window
 autocmd BufWritePost *.py call flake8#Flake8()
+
+"======================================================================
+"============================== GRUVBOX ===============================
+"======================================================================
+
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+
+"======================================================================
+"============================ vim-fugitive ============================
+"======================================================================
+
+" Open main window
+map <leader>g :Git<CR>

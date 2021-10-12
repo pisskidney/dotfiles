@@ -7,7 +7,7 @@ Welcome to my dotfiles, where originality doesn't matter and most things are sto
     * oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
 
 ## Set-up
-Run `curl -s -L https://github.com/pisskidney/dotfiles/raw/master/bootstrap.sh | /bin/bash`
+Run `curl -s -L https://github.com/pisskidney/dotfiles/raw/master/bootstrap.sh | /bin/bash` </br>
 Run `:CocInstall coc-pyright` to install Python language server.
 
 * **What this all does:**
