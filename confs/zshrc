@@ -38,3 +38,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/lib/lightdm/lightdm:/usr/local/bin:/usr/bin:/bin
+
+# For cool colors @ vim-gruvbox plugin. Delete if not used anymore
+source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"

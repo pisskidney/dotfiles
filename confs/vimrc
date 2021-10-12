@@ -47,63 +47,65 @@ call plug#end()
 "========================= GENERAL SETTINGS ===========================
 "======================================================================
 
+set completeopt=menuone,noinsert,noselect " Control the way auto-complete works (copied from Primagean)
+
 set encoding=utf-8
 set nowrap
-set cmdheight=2             " Give more space for displaying messages.
-set hidden                  " TextEdit might fail if hidden is not set.
-set updatetime=300          " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-		            " delays and poor user experience.
-set shortmess+=c            " Don't pass messages to |ins-completion-menu|.
-set t_Co=256                " Enable 256 colors
-set termguicolors           " Enable GUI colors for the terminal to get truecolor
-set noswapfile              " Disable swap files
+set cmdheight=2                           " Give more space for displaying messages.
+set hidden                                " TextEdit might fail if hidden is not set.
+set updatetime=50                         " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+		                          " delays and poor user experience.
+set shortmess+=c                          " Don't pass messages to |ins-completion-menu|.
+set t_Co=256                              " Enable 256 colors
+set termguicolors                         " Enable GUI colors for the terminal to get truecolor
+set noswapfile                            " Disable swap files
 set nobackup
 set nowb
-set autoread                " Reload file changes outside of vim
+set autoread                              " Reload file changes outside of vim
 
-set number                  " Display line numbers
-set numberwidth=1           " Using only 1 column (and 1 space) if possible
-set background=dark         " We are using dark background
-set title                   " Show title in console title bar
+set number                                " Display line numbers
+set numberwidth=1                         " Using only 1 column (and 1 space) if possible
+set background=dark                       " We are using dark background
+set title                                 " Show title in console title bar
 
 " Moving Around/Editing
-set ruler                   " Show the cursor position all the time
-set nostartofline           " Avoid moving cursor to BOL when jumping around
-set virtualedit=block       " Let cursor move past the last char in <C-v> mode
-set scrolloff=3             " Keep 3 context lines above and below the cursor
-set backspace=2             " Allow backspacing over autoindent, EOL, and BOL
-set nowrap                  " Don't wrap text
-set linebreak               " Don't wrap textin the middle of a word
-set autoindent              " Always set autoindenting on
-set smartindent             " Use smart indent if there is no indent file
-set tabstop=4               " <Tab> inserts 4 spaces
-set shiftwidth=4            " Indent level is 4 spaces wide
-set softtabstop=4           " <BS> over an autoindent deletes both spaces
-set smarttab                " Handle tabs more intelligently
-set expandtab               " Use spaces, not tabs, for autoindent/tab key
-set shiftround              " Rounds indent to a multiple of shiftwidth
-set matchpairs+=<:>         " Show matching <> (html mainly) as well
-set foldmethod=indent       " Allow us to fold on indents
-set foldlevel=99            " Don't fold by default
-set colorcolumn=99          " Color column to mark the end 80 char limit
+set ruler                                 " Show the cursor position all the time
+set nostartofline                         " Avoid moving cursor to BOL when jumping around
+set virtualedit=block                     " Let cursor move past the last char in <C-v> mode
+set scrolloff=3                           " Keep 3 context lines above and below the cursor
+set backspace=2                           " Allow backspacing over autoindent, EOL, and BOL
+set nowrap                                " Don't wrap text
+set linebreak                             " Don't wrap textin the middle of a word
+set autoindent                            " Always set autoindenting on
+set smartindent                           " Use smart indent if there is no indent file
+set tabstop=4                             " <Tab> inserts 4 spaces
+set shiftwidth=4                          " Indent level is 4 spaces wide
+set softtabstop=4                         " <BS> over an autoindent deletes both spaces
+set smarttab                              " Handle tabs more intelligently
+set expandtab                             " Use spaces, not tabs, for autoindent/tab key
+set shiftround                            " Rounds indent to a multiple of shiftwidth
+set matchpairs+=<:>                       " Show matching <> (html mainly) as well
+set foldmethod=indent                     " Allow us to fold on indents
+set foldlevel=99                          " Don't fold by default
+set colorcolumn=99                        " Color column to mark the end 80 char limit
 
 " Reading/Writing
-set noautowrite             " Never write a file unless I request it
-set noautowriteall          " NEVER
-set noautoread              " Don't automatically re-read changed files
-set nomodeline              " Disallow vim options to be embedded in files
-set modelines=0             " Same as above
-set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings
+set noautowrite                           " Never write a file unless I request it
+set noautowriteall                        " NEVER
+set noautoread                            " Don't automatically re-read changed files
+set nomodeline                            " Disallow vim options to be embedded in files
+set modelines=0                           " Same as above
+set ffs=unix,dos,mac                      " Try recognizing dos, unix, and mac line endings
 
 " Searching and Patterns
 nnoremap / /\v
 vnoremap / /\v
-set ignorecase              " Default to using case insensitive searches,
-set smartcase               " Unless uppercase letters are used in the regex.
-set hlsearch                " Highlight searches by default.
-set showmatch               " Briefly jump to a paren once it's balanced
-set incsearch               " Incrementally search while typing a /regex
-set gdefault                " Applies substitutions globally on lines
+set ignorecase                            " Default to using case insensitive searches,
+set smartcase                             " Unless uppercase letters are used in the regex.
+set hlsearch                              " Highlight searches by default.
+set showmatch                             " Briefly jump to a paren once it's balanced
+set incsearch                             " Incrementally search while typing a /regex
+set gdefault                              " Applies substitutions globally on lines
 
 " Change the leader to be n
 let mapleader="n"
