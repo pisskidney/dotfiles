@@ -8,7 +8,7 @@ Welcome to my dotfiles, where originality doesn't matter and most things are sto
 
 ## Set-up
 Run `curl -s -L https://github.com/pisskidney/dotfiles/raw/master/bootstrap.sh | /bin/bash`
-Run :CocInstall coc-pyright to install Python language server.
+Run `:CocInstall coc-pyright` to install Python language server.
 
 * **What this all does:**
     - clones the dotfiles repo to ~/.dotfiles
