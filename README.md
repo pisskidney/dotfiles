@@ -1,7 +1,7 @@
 # Peter Horvath's dotfiles.
 Welcome to my dotfiles, where originality doesn't matter and most things are stolen.
 
-# Prerequisits
+## Prerequisits
     * nodejs (brew install node) (needed by CoC)
     * flake8 (https://pypi.org/project/flake8/)
     * oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
@@ -10,9 +10,9 @@ Welcome to my dotfiles, where originality doesn't matter and most things are sto
 Run `curl -s -L https://github.com/pisskidney/dotfiles/raw/master/bootstrap.sh | /bin/bash` </br>
 Run `:CocInstall coc-pyright` to install Python language server.
 
-# What this all does:
+## What this all does:
     - clones the dotfiles repo to ~/.dotfiles
     - creates proper symlinks to all config files
 
-# After set-up
+## After set-up
     * Check .vimrc vim-flake8 settings and set the flake8 executable path properly
