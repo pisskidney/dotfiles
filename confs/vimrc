@@ -35,7 +35,7 @@ Plug 'tpope/vim-commentary'
 " Set tab options on run-time
 Plug 'tpope/vim-sleuth'
 " Colorscheme
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 " Cool tabbar (line on bottom)
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -105,13 +105,13 @@ set showmatch               " Briefly jump to a paren once it's balanced
 set incsearch               " Incrementally search while typing a /regex
 set gdefault                " Applies substitutions globally on lines
 
+" Change the leader to be n
+let mapleader="n"
+
 " Hide matches on <leader>space
 nnoremap <leader><space> :noh<CR>
 nnoremap <tab> %
 vnoremap <tab> %
-
-" Change the leader to be n
-let mapleader="n"
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
