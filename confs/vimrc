@@ -118,6 +118,7 @@ vnoremap <tab> %
 
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :qa<CR>
 
 " Save on <leader>w or :W
 nnoremap <leader>w :w<CR>
