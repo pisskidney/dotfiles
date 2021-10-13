@@ -48,6 +48,7 @@ call plug#end()
 "======================================================================
 
 set completeopt=menuone,noinsert,noselect " Control the way auto-complete works (copied from Primagean)
+set signcolumn=number                     " Show error arrows instead of the line numbers
 
 set encoding=utf-8
 set nowrap
