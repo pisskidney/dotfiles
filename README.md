@@ -9,6 +9,7 @@ Welcome to my dotfiles, where originality doesn't matter and most things are sto
 ## Set-up
 Run `curl -s -L https://github.com/pisskidney/dotfiles/raw/master/bootstrap.sh | /bin/bash` </br>
 Run `:CocInstall coc-pyright` to install Python language server.
+Also `coc-json coc-css coc-html coc-tsserver`
 
 ## What this all does:
     - clones the dotfiles repo to ~/.dotfiles

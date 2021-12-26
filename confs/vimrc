@@ -48,7 +48,7 @@ call plug#end()
 "======================================================================
 
 set completeopt=menuone,noinsert,noselect " Control the way auto-complete works (copied from Primagean)
-set signcolumn=number                     " Show error arrows instead of the line numbers
+set signcolumn=no                         " Show error arrows instead of the line numbers
 
 set encoding=utf-8
 set nowrap
@@ -209,7 +209,7 @@ let g:airline_theme='violet'
 let g:flake8_cmd = '/Users/d695822/Library/Python/3.8/bin/flake8 --max-line-length 100'
 let g:flake8_show_quickfix=1
 let g:flake8_show_in_gutter=1
-let g:flake8_show_in_file=1           " Show errors directly in file
+let g:flake8_show_in_file=0           " Show errors directly in file
 let g:flake8_quickfix_height=5        " Height of quickfix window
 autocmd BufWritePost *.py call flake8#Flake8()
 
