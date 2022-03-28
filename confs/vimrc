@@ -108,6 +108,8 @@ set showmatch                             " Briefly jump to a paren once it's ba
 set incsearch                             " Incrementally search while typing a /regex
 set gdefault                              " Applies substitutions globally on lines
 
+set re=0				  " Use new regular expression engine. typescript syntax highlighting does not work ow
+
 " Change the leader to be n
 let mapleader="n"
 
@@ -138,6 +140,7 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " <leader>p inserts pdb line after the current line
 nnoremap <leader>p oimport pdb; pdb.set_trace()<Esc>
+nnoremap <leader>P oimport ipdb; ipdb.set_trace()<Esc>
 
 " Toggle paste mode
 map <leader>P :set paste!<CR>
