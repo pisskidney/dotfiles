@@ -139,8 +139,8 @@ map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimr
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " <leader>p inserts pdb line after the current line
-nnoremap <leader>p oimport pdb; pdb.set_trace()<Esc>
-nnoremap <leader>i oimport ipdb; ipdb.set_trace()<Esc>
+nnoremap <leader>p Simport pdb; pdb.set_trace()<Esc>
+nnoremap <leader>i Simport ipdb; ipdb.set_trace()<Esc>
 
 " Toggle paste mode
 map <leader>P :set paste!<CR>
