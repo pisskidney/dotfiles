@@ -139,8 +139,7 @@ map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimr
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 
 " <leader>p inserts pdb line after the current line
-nnoremap <leader>p Simport pdb; pdb.set_trace()<Esc>
-nnoremap <leader>i Simport ipdb; ipdb.set_trace()<Esc>
+nnoremap <leader>p o<CR># @TODO DELETE ME<CR>import pdb;<CR>pdb.set_trace()<CR><Esc>
 
 " Toggle paste mode
 map <leader>P :set paste!<CR>
@@ -154,7 +153,7 @@ map <leader>3 :set number!<CR>
 
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1      " Show hidden files
-let g:NERDTreeWinSize=20      " NerdTree width
+let g:NERDTreeWinSize=50      " NerdTree width
 
 "======================================================================
 "========================== COC SETTINGS ==============================
@@ -209,7 +208,7 @@ let g:airline_theme='violet'
 "======================================================================
 
 " Run pyflakes whenever writing to a Python file
-let g:flake8_cmd = '/Users/d695822/Library/Python/3.8/bin/flake8 --max-line-length 100'
+let g:flake8_cmd = '/usr/local/bin/flake8 --max-line-length 100'
 let g:flake8_show_quickfix=1
 let g:flake8_show_in_gutter=1
 let g:flake8_show_in_file=0           " Show errors directly in file
