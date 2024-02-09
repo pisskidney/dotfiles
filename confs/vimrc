@@ -41,6 +41,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Syntax highlighting, error checking, PEP8 checks etc
 Plug 'nvie/vim-flake8'
+" Github copilot
+Plug 'github/copilot.vim'
 call plug#end()
 
 "======================================================================
@@ -58,7 +60,7 @@ set updatetime=50                         " Having longer updatetime (default is
 		                          " delays and poor user experience.
 set shortmess+=c                          " Don't pass messages to |ins-completion-menu|.
 set t_Co=256                              " Enable 256 colors
-set termguicolors                         " Enable GUI colors for the terminal to get truecolor
+"set termguicolors                         " Enable GUI colors for the terminal to get truecolor
 set noswapfile                            " Disable swap files
 set nobackup
 set nowb
@@ -126,11 +128,17 @@ nnoremap <leader>Q :qa<CR>
 nnoremap <leader>w :w<CR>
 command! W :w
 
-" Ctrl-jklm  changes to that split
-map <c-j> <c-w>j
+" Ctrl-jklm changes to that split
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
+map <c-j> <c-w>j
+
+" Paste only from the yanked registry and not deleted registry
+" nnoremap p "0p
+nnoremap <leader>d "0p
+nnoremap x "_x
+nnoremap X "_X
 
 " Reload .vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -147,11 +155,15 @@ map <leader>P :set paste!<CR>
 " Toggle numbers
 map <leader>3 :set number!<CR>
 
+" Move line up or down
+nnoremap <c-j> :m .+1<CR>==
+nnoremap <c-k> :m .-2<CR>==
+
 "======================================================================
 "======================== NERDTREE SETTINGS ===========================
 "======================================================================
 
-map <leader>n :NERDTreeToggle<CR>
+map <leader>b :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1      " Show hidden files
 let g:NERDTreeWinSize=50      " NerdTree width
 
@@ -219,7 +231,8 @@ autocmd BufWritePost *.py call flake8#Flake8()
 "============================== GRUVBOX ===============================
 "======================================================================
 
-let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_termcolors=256
+let g:gruvbox_contrast_dark='dark'
 colorscheme gruvbox
 
 "======================================================================
